@@ -1,0 +1,153 @@
+@import "../variables.scss";
+
+nav {
+  width: 100%;
+  transition: 0.4s ease;
+  padding: 20px 0;
+  box-shadow: 0 0 5px $box;
+  background: $background1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  &.active {
+    box-shadow: 0 0 5px $box;
+    background: $background1;
+  }
+}
+
+.menu_btn {
+  display: none;
+}
+
+.overlay {
+  display: none;
+}
+
+.nav_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: black;
+
+    span {
+      color: white;
+      font-size: 15px;
+      background: $unique;
+      padding: 0 2px;
+    }
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    a {
+      text-transform: capitalize;
+      font-size: 16px;
+      color: black;
+      position: relative;
+      transition: 0.4s ease;
+
+      &::before {
+        content: "";
+        width: 0;
+        height: 2px;
+        background: black;
+        left: 50%;
+        bottom: -3px;
+        transform: translateX(-50%);
+        position: absolute;
+        transition: 0.4s;
+      }
+
+      &:hover::before {
+        width: 50%;
+      }
+
+      &.active::before {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .menu_btn {
+    display: block;
+    cursor: pointer;
+
+    .icon:first-child {
+      display: block;
+    }
+    .icon:last-child {
+      display: none;
+    }
+
+    &.active .icon:first-child {
+      display: none;
+    }
+
+    &.active .icon:last-child {
+      display: block;
+    }
+  }
+
+  .nav_container {
+    .links {
+      position: absolute;
+      width: 400px;
+      height: 100vh;
+      top: 79px;
+      left: -110%;
+      flex-direction: column;
+      align-items: flex-start;
+      background: $background1;
+      padding: 30px 8%;
+      box-shadow: 0 0 5px $box;
+      z-index: 100;
+      transition: 0.4s ease;
+
+      &.active {
+        left: 0;
+      }
+    }
+  }
+
+  .overlay {
+    display: block;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    background: black;
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+    visibility: hidden;
+    transition: 0.4s ease;
+
+    &.active {
+      opacity: 0.3;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .nav_container .links {
+    width: 100%;
+  }
+}

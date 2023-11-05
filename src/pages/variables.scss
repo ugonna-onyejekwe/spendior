@@ -1,0 +1,35 @@
+$background1: rgb(247, 242, 242);
+$background2: rgb(228, 226, 226);
+$unique: rgb(5, 17, 29);
+$text-color1: black;
+$text-color2: rgb(26, 25, 25);
+$box: rgb(54, 52, 52);
+
+button {
+  padding: 20px 30px;
+  background: $unique;
+  color: white;
+  text-transform: capitalize;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  .arrow {
+    font-size: 16px;
+    transition: 0.3s ease;
+    margin-left: -10px;
+    visibility: hidden;
+  }
+
+  &:hover .arrow {
+    margin-left: 10px;
+    visibility: visible;
+  }
+}
+@media (max-width: 1024px) {
+  button {
+    font-size: 13px;
+  }
+}

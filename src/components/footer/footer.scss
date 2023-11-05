@@ -1,0 +1,133 @@
+@import "../variables.scss";
+
+footer {
+  width: 100%;
+  height: fit-content;
+  background: rgb(5, 21, 37);
+  padding: 80px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    color: $background2;
+
+    div h4 {
+      text-transform: capitalize;
+      font-size: 18px;
+      padding-bottom: 15px;
+    }
+
+    .col1 {
+      flex: 2;
+      min-width: 300px;
+
+      .logo {
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        font-size: 40px;
+
+        span {
+          font-size: 25px;
+          background: $background2;
+          color: $unique;
+          padding: 0 3px;
+        }
+      }
+      p {
+        padding: 20px 0;
+      }
+    }
+
+    .col2 {
+      flex: 1;
+      min-width: 100px;
+      a {
+        color: $background2;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 15px;
+        text-transform: capitalize;
+        transition: 0.4s ease;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+
+    .col3 {
+      flex: 1;
+      min-width: 150px;
+
+      p {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding-bottom: 15px;
+
+        .icon {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .col4 {
+      flex: 2;
+      min-width: 300px;
+
+      .input {
+        width: 100%;
+        h5 {
+          font-size: 18px;
+          text-transform: capitalize;
+          padding-bottom: 15px;
+        }
+        div {
+          display: flex;
+          align-items: center;
+
+          input {
+            padding: 15px 10px;
+            border-radius: 10px 0 0 10px;
+            border: 1px solid $background2;
+            background: transparent;
+            width: 100%;
+            color: $background2;
+          }
+
+          .btn {
+            background: $background2;
+            padding: 11px 15px;
+            border-radius: 0 10px 10px 0;
+            cursor: pointer;
+
+            .icon {
+              color: $unique;
+              font-size: 21px;
+            }
+          }
+        }
+      }
+
+      .social {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        .icon {
+          font-size: 20px;
+          cursor: pointer;
+          transition: 0.4s ease;
+
+          &:hover {
+            transform: scale(1.5);
+          }
+        }
+      }
+    }
+  }
+}
